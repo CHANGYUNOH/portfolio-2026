@@ -1,0 +1,113 @@
+/* ============================================================
+   Design Tokens
+   모든 색상 / 간격 / 타이포는 이 파일에서만 정의합니다.
+   컴포넌트 CSS는 반드시 var(--*) 를 통해서만 접근하세요.
+   ============================================================ */
+
+:root {
+  /* ---- Brand ---------------------------------------------- */
+  --accent: #d4f74e;          /* acid lime — 포인트 컬러 */
+  --accent-soft: #eaffa0;
+  --on-accent: #0b0b0c;       /* accent 배경 위에 올라가는 글자색 */
+
+  /* ---- Surface (dark = default) --------------------------- */
+  --bg: #0b0b0c;
+  --bg-elev-1: #131315;
+  --bg-elev-2: #1a1a1d;
+  --line: rgb(255 255 255 / 10%);
+  --line-strong: rgb(255 255 255 / 22%);
+
+  /* ---- Text ----------------------------------------------- */
+  --fg: #ededec;
+  --fg-muted: #8e8e88;
+  --fg-subtle: #85857e;   /* 카드 배경 위에서도 4.5:1 이상 */
+  --accent-fg: var(--accent);
+
+  /* ---- Radius --------------------------------------------- */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 24px;
+  --r-xl: 36px;
+  --r-full: 999px;
+
+  /* ---- Spacing (8pt base) --------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* 섹션 상하 여백 — 뷰포트에 따라 유동 */
+  --section-y: clamp(64px, 8vw, 120px);
+
+  /* ---- Layout --------------------------------------------- */
+  --container: 1280px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --header-h: 72px;
+
+  /* ---- Typography ----------------------------------------- */
+  --font-sans: var(--font-inter), 'Pretendard Variable', Pretendard,
+    -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo',
+    'Malgun Gothic', sans-serif;
+  --font-display: var(--font-display-latin), var(--font-sans);
+  --font-mono: var(--font-mono-latin), ui-monospace, 'SFMono-Regular', Menlo,
+    monospace;
+
+  /* fluid type scale */
+  --t-display: clamp(3rem, 11vw, 10rem);
+  --t-h1: clamp(2.5rem, 7vw, 5.5rem);
+  --t-h2: clamp(2rem, 5vw, 3.75rem);
+  --t-h3: clamp(1.375rem, 2.4vw, 2rem);
+  --t-h4: clamp(1.125rem, 1.6vw, 1.375rem);
+  --t-body: clamp(0.9375rem, 1.05vw, 1.0625rem);
+  --t-sm: 0.875rem;
+  --t-xs: 0.75rem;
+
+  --leading-tight: 0.92;
+  --leading-snug: 1.2;
+  --leading-normal: 1.7;
+
+  /* ---- Motion --------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 900ms;
+
+  /* ---- Elevation ------------------------------------------ */
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 30%);
+  --shadow-2: 0 18px 48px -24px rgb(0 0 0 / 70%);
+
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-cursor: 300;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   Light theme — 토큰 값만 갈아끼웁니다. 구조/컴포넌트 CSS는 불변.
+   ============================================================ */
+[data-theme='light'] {
+  --bg: #f2f1ec;
+  --bg-elev-1: #ffffff;
+  --bg-elev-2: #e9e8e1;
+  --line: rgb(20 20 15 / 12%);
+  --line-strong: rgb(20 20 15 / 26%);
+
+  --fg: #14140f;
+  --fg-muted: #5a5a52;
+  --fg-subtle: #6c6c63;  /* 대비 4.7:1 (WCAG AA) */
+  --accent: #c3e831;
+  --accent-soft: #4b5d05;
+  --accent-fg: #4b5d05;
+
+  --shadow-2: 0 18px 48px -28px rgb(20 20 15 / 30%);
+
+  color-scheme: light;
+}

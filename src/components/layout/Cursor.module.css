@@ -1,0 +1,51 @@
+.dot,
+.ring {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.dot {
+  inline-size: 6px;
+  block-size: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--accent);
+}
+
+.ring {
+  inline-size: 34px;
+  block-size: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid var(--line-strong);
+  transition: scale var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out), opacity var(--dur-fast);
+}
+
+.ring[data-visible='true'] {
+  opacity: 1;
+}
+
+.ring[data-hover='true'] {
+  scale: 1.7;
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* 포인터가 정밀한 환경에서만 노출 */
+@media (pointer: fine) {
+  .dot {
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .dot,
+  .ring {
+    display: none;
+  }
+}

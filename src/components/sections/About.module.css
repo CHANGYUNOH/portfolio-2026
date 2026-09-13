@@ -1,0 +1,212 @@
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--sp-4);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--bg-elev-1);
+  overflow: hidden;
+  transition: border-color var(--dur-base) var(--ease-out),
+    translate var(--dur-base) var(--ease-out);
+}
+
+.card::before {
+  /* 마우스 호버 시 은은하게 번지는 하이라이트 */
+  content: '';
+  position: absolute;
+  inset-block-start: -40%;
+  inset-inline-end: -20%;
+  inline-size: 240px;
+  block-size: 240px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 16%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: var(--line-strong);
+  translate: 0 -3px;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ---- Profile ---------------------------------------------- */
+
+.profile {
+  grid-column: span 12;
+  gap: var(--sp-5);
+}
+
+@media (width >= 880px) {
+  .profile {
+    grid-column: span 8;
+    grid-row: span 3;
+  }
+}
+
+.portrait {
+  display: grid;
+  place-items: center;
+  inline-size: 72px;
+  block-size: 72px;
+  border-radius: var(--r-md);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.profileBody {
+  display: grid;
+  gap: var(--sp-3);
+  flex: 1;
+}
+
+.name {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  font-family: var(--font-display);
+  font-size: var(--t-h3);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.name em {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: var(--t-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+.profileText {
+  color: var(--fg-muted);
+  max-inline-size: 52ch;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  padding-block-start: var(--sp-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  margin-block-end: 2px;
+}
+
+.facts dd {
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+/* ---- Stat ------------------------------------------------- */
+
+.stat {
+  grid-column: span 4;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  min-block-size: 132px;
+}
+
+@media (width >= 880px) {
+  /* 프로필(8칸) 오른쪽에 4칸짜리 지표 3개가 세로로 쌓입니다 */
+  .stat {
+    grid-column: span 4;
+    min-block-size: 0;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent-fg);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ---- Principle -------------------------------------------- */
+
+.principle {
+  grid-column: span 6;
+  gap: var(--sp-3);
+  min-block-size: 168px;
+}
+
+@media (width >= 1024px) {
+  /* 원칙 카드 4개가 한 줄(3칸 x 4)로 딱 떨어집니다 */
+  .principle {
+    grid-column: span 3;
+  }
+}
+
+.principleNo {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  color: var(--fg-subtle);
+  margin-block-end: auto;
+}
+
+.principleTitle {
+  font-size: var(--t-h4);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.principleDesc {
+  font-size: var(--t-sm);
+  line-height: 1.65;
+  color: var(--fg-muted);
+}
+
+@media (width < 560px) {
+  .stat,
+  .principle {
+    grid-column: span 12;
+  }
+
+  .stat {
+    min-block-size: 0;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-4);
+  }
+}

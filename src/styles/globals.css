@@ -1,0 +1,138 @@
+@import './tokens.css';
+@import './reset.css';
+
+/* 한글 본문 — Pretendard (CDN, 동적 서브셋) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  font-feature-settings: 'ss01', 'cv05';
+  transition: background-color var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out);
+  overflow-x: hidden;
+}
+
+/* 전역 필름 그레인 — 화면 전체에 얇은 노이즈 레이어 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 8s steps(6) infinite;
+}
+
+@keyframes grain {
+  0%,
+  100% { transform: translate(0, 0); }
+  10% { transform: translate(-3%, -5%); }
+  30% { transform: translate(4%, -2%); }
+  50% { transform: translate(-2%, 6%); }
+  70% { transform: translate(5%, 3%); }
+  90% { transform: translate(-4%, 1%); }
+}
+
+/* ============================================================
+   Layout utilities
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   Typography utilities
+   ============================================================ */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ============================================================
+   Scroll reveal — useReveal() 훅이 data-revealed 를 토글합니다.
+   ============================================================ */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-revealed='true'] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 마스크 리빌 — 한 줄짜리 큰 타이포가 아래에서 밀려 올라옵니다.
+   관찰 대상은 마스크(부모)이고, 실제로 움직이는 건 자식입니다.
+   (자식에 clip-path 를 걸면 IntersectionObserver 가 교차 면적을 0으로
+    계산해 콜백이 아예 발생하지 않습니다.) */
+[data-reveal='mask'] {
+  display: block;
+  overflow: hidden;
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal='mask'] > * {
+  display: block;
+  transform: translate3d(0, 105%, 0);
+  transition: transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform;
+}
+
+[data-reveal='mask'][data-revealed='true'] > * {
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal='mask'] > * {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,120 @@
+.timeline {
+  display: grid;
+}
+
+.item {
+  display: grid;
+  gap: var(--sp-4);
+  padding-block: var(--sp-6);
+  border-block-start: 1px solid var(--line);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+
+/* 섹션 헤더의 밑줄과 겹치지 않도록 첫 항목은 윗선을 생략 */
+.item:first-child {
+  border-block-start: 0;
+  padding-block-start: 0;
+}
+
+.item:last-child {
+  border-block-end: 1px solid var(--line);
+}
+
+@media (width >= 880px) {
+  .item {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: var(--sp-7);
+  }
+}
+
+/* ---- Period ----------------------------------------------- */
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  align-self: start;
+}
+
+.dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  flex-shrink: 0;
+  transition: background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.item:first-child .dot {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.item:hover .dot {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- Content ---------------------------------------------- */
+
+.content {
+  display: grid;
+  gap: var(--sp-3);
+}
+
+.company {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-3);
+  font-family: var(--font-display);
+  font-size: var(--t-h3);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.position {
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.desc {
+  color: var(--fg-muted);
+  max-inline-size: 60ch;
+}
+
+.achievements {
+  display: grid;
+  gap: var(--sp-2);
+  margin-block-start: var(--sp-2);
+}
+
+.achievements li {
+  position: relative;
+  padding-inline-start: var(--sp-5);
+  font-size: var(--t-sm);
+  line-height: 1.7;
+  color: var(--fg);
+}
+
+.achievements li::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0.72em;
+  inset-inline-start: 0;
+  inline-size: 10px;
+  block-size: 1px;
+  background: var(--accent);
+}

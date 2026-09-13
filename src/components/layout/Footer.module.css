@@ -1,0 +1,64 @@
+.footer {
+  position: relative;
+  border-block-start: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-6);
+}
+
+.copy,
+.built {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--fg-subtle);
+}
+
+.top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.top:hover {
+  color: var(--accent-fg);
+}
+
+.top span {
+  transition: translate var(--dur-fast) var(--ease-out);
+}
+
+.top:hover span {
+  translate: 0 -3px;
+}
+
+/* 큰 워터마크 타이포 (장식용 SVG).
+   폭은 항상 푸터에 맞고, 높이는 viewBox 비율을 따라갑니다. */
+.watermark {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+}
+
+.watermark text {
+  font-family: var(--font-display);
+  font-size: 140px;
+  font-weight: 800;
+  fill: color-mix(in srgb, var(--fg) 8%, transparent);
+  user-select: none;
+}
