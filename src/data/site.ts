@@ -135,54 +135,176 @@ export type Work = {
 export const works: Work[] = [
   {
     id: 'work-01',
-    title: '커머스 플랫폼 리뉴얼', // TODO
+    title: 'X-OPS(매장 관리 시스템) 사이트', // TODO
     summary:
-      '디자인 토큰 기반 컴포넌트 라이브러리를 새로 구축하고, 전 페이지 반응형 퍼블리싱을 담당했습니다.',
-    year: '2025',
-    role: 'Publishing Lead',
-    tags: ['Next.js', 'CSS Modules', 'Design System', 'A11y'],
+      'AI를 이용한 XGOLF의 스크린골프 매장을 이용하는 고객을 위한 예약·매장 이용 플랫폼 개발',
+    year: '2026.08 ~ 진행중',
+    role: 'Frontend',
+    tags: ['Claude', 'React', 'Supabase'],
     featured: true,
+    href: 'https://ops.thegolf.com/'
   },
   {
     id: 'work-02',
-    title: '브랜드 캠페인 사이트',
-    summary: '스크롤 기반 인터랙션과 GSAP 모션을 활용한 원페이지 캠페인.',
-    year: '2025',
+    title: 'X-GOLF 회원 예약 앱',
+    summary: 'AI를 이용한 골프장 또는 골프 연습장의 운영과 고객 서비스를 하나의 웹앱에서 통합 관리하는 플랫폼 개발',
+    year: '2026.08 ~ 진행중',
     role: 'Frontend',
-    tags: ['React', 'GSAP', 'Interaction'],
+    tags: ['Claude', 'React', 'Supabase'],
+    href: 'https://xgolf-webapp.vercel.app/'
   },
   {
     id: 'work-03',
-    title: '어드민 대시보드',
-    summary: '복잡한 테이블/필터 UI를 접근성 기준에 맞춰 재설계했습니다.',
+    title: 'AI 기반 스포츠 분석 시스템(관리자)',
+    summary: 'AI 스포츠 모션을 기반한 빅데이터 중심의 데이터 위주를 분석해서 나타내는 UI 개발',
     year: '2024',
     role: 'Publisher',
-    tags: ['TypeScript', 'Table UI', 'WAI-ARIA'],
+    tags: ['Nuxt.js', 'FullCalendar', 'Toast-ui', 'ECharts', 'Swiper.js', 'Video.js'],
+    href: 'https://aiadmin.thegolf.com'
   },
   {
     id: 'work-04',
-    title: '모바일 웹앱',
-    summary: 'PWA 대응과 다크모드를 포함한 모바일 퍼스트 퍼블리싱.',
-    year: '2024',
+    title: 'AI 기반 스포츠 분석 시스템(매장)',
+    summary: 'AI 스포츠 모션을 기반한 빅데이터 중심의 데이터 위주를 분석해서 나타내는 UI 개발',
+    year: '2025.12 ~ 2026.03',
     role: 'Publisher',
-    tags: ['PWA', 'Dark Mode', 'Mobile First'],
+    tags: ['Nuxt.js', 'FullCalendar', 'Toast-ui', 'ECharts', 'Swiper.js', 'Video.js'],
     featured: true,
+    href: 'https://aishop.thegolf.com'
   },
   {
     id: 'work-05',
-    title: '디자인 시스템 문서화',
-    summary: 'Storybook 기반 컴포넌트 문서와 사용 가이드를 정리했습니다.',
-    year: '2023',
-    role: 'Design System',
-    tags: ['Storybook', 'Documentation'],
+    title: 'AI 기반 스포츠 분석 시스템(코칭)',
+    summary: 'AI 스포츠 모션을 기반한 빅데이터 중심의 데이터 위주를 분석해서 나타내는 UI 개발',
+    year: '2025.08 ~ 2025.11',
+    role: 'Publisher',
+    tags: ['Nuxt.js', 'ECharts', 'Video.js'],
+    href: 'https://aicoach.thegolf.com'
   },
   {
     id: 'work-06',
-    title: '반응형 랜딩 템플릿',
-    summary: '재사용 가능한 섹션 블록으로 구성한 마케팅 랜딩 템플릿 세트.',
-    year: '2023',
+    title: 'AI 기반 스포츠 분석 시스템(회원)',
+    summary: 'AI 스포츠 모션을 기반한 빅데이터 중심의 데이터 위주를 분석해서 나타내는 UI 개발',
+    year: '2025.04 ~ 2025.07',
     role: 'Publisher',
-    tags: ['HTML', 'Sass', 'Template'],
+    tags: ['Nuxt.js', 'ECharts', 'Video.js'],
+    href: 'https://aimember.thegolf.com/'
+  },
+  {
+    id: 'work-07',
+    title: '팝골프 - 대규모 복합 골프 레저 파크 운영 사업',
+    summary: '팝골프 시설안내 지도를 활용한 확대/축소 기능 개발',
+    year: '2024.12 ~ 2025.03',
+    role: 'Publisher',
+    tags: ['Vue3'],
+    href: 'https://popgolf.kr/'
+  },
+  {
+    id: 'work-08',
+    title: '타임교육 C&P 교육서비스의 게이미피케이션 활용에 관한 사전연구 수행사업',
+    summary: '기본 프로젝트 세팅 및 가이드 작성으로 개발 작업 진척도 향상 및 사용자 대시보드 페이지 작업, api호출로 데이터 연동',
+    year: '2024.06 ~ 2024.08',
+    role: 'Publisher',
+    tags: ['Nuxt.js', 'Sass', 'Swiper.js', 'Toast-ui', 'Datepicker'],
+    href: 'https://game.wbsoft.kr/gate'
+  },
+  {
+    id: 'work-09',
+    title: '서비스형 소프트웨어(SaaS) 개발 및 육성 사업',
+    summary: '학습패턴 시각화, 실시간 목표 달성 현황 등 개인의 성취를 한눈에 보여주는 맞춤형 대시보드 작성, 강의 영상 시청부터 학습메모, 강의자료, 시험, 과제, 설문까지 학습에 필요한 모든 기능을 아우르는 학습플레이어 작업 및 video.js로 학습 플레이어 커스텀 개발, chart.js로 학습 차트 개발, swiper.js로 카드 리스트 구성, 대시보드 구성',
+    year: '2023.07 ~ 2024.08',
+    role: 'Publisher',
+    tags: ['Nuxt.js', 'Video.js', 'Chart.js', 'Swiper.js'],
+    href: 'https://www.saasda.co.kr/'
+  },
+  {
+    id: 'work-10',
+    title: '하남교육재단 진로진학통합플랫폼 꿈노트 구축사업',
+    summary: '미리보기 팝업이 모달에서 새 창 팝업으로 변경, 차트 커스텀 및 수정 및 학습자 리스트, 상세 페이지 및 관리자 페이지 및 미리보기 팝업 작업',
+    year: '2023.10 ~ 2024.08',
+    role: 'Publisher',
+    tags: ['Nuxt.js', 'Sass', 'Swiper.js', 'Chart.js', 'Toast-ui'],
+    href: 'https://www.hdream.or.kr/'
+  },
+  {
+    id: 'work-11',
+    title: '하나은행 디지털캠퍼스 평가시스템 구축사업',
+    summary: '영문화 작업으로 개발 작업시간 단축 및 내부망 구축 시스템으로 평가 화면(리스트, 상세, 팝업 등) 퍼블리싱 작업, ES6문법으로 마이그레이션, 크로스 브라우징 작업(IE적용)',
+    year: '2024.02 ~ 2024.03',
+    role: 'Publisher',
+    tags: ['HTML', 'CSS', 'JQuery', 'JavaScript', 'JSP'],
+    href: 'https://campus.hanabank.com:18443/main.do'
+  },
+  {
+    id: 'work-12',
+    title: '공군교육사령부 공군 이러닝 무선기반체계 고도화 방안 연구 수행사업',
+    summary: '공군교육사령부 ‘공군학습포털’ 구축, Vue2 → Vue3로 마이그레이션 및 메인/서브 페이지 퍼블리싱 작업',
+    year: '2023.07 ~ 2023.12',
+    role: 'Publisher',
+    tags: ['Vue3', 'Chart.js', 'Swiper.js', 'FullCalendar', 'Video.js'],
+    href: 'https://af.wbsoft.kr/'
+  },
+  {
+    id: 'work-13',
+    title: '현대모비스 2024년 시스템 운영사업',
+    summary: '현대모비스 모비스쿨, 오픈플랫폼 등 구축 및 메뉴 구성 및 프로그레스 동작, 카테고리 모달 작업',
+    year: '2023.01 ~ 2023.12',
+    role: 'Publisher',
+    tags: ['Vue.js', 'Sass', 'Swiper.js', 'Toast-ui'],
+  },
+  {
+    id: 'work-14',
+    title: 'OpenPrompt 서비스 사업',
+    summary: '프롬프트 라이브러리 사이트 구축 및 리스트, 상세, 쓰기 페이지 작업',
+    year: '2022.12 ~ 2023.08',
+    role: 'Publisher',
+    tags: ['Nuxt.js', 'Sass', 'Toast-ui', 'Swiper.js'],
+    href: 'https://www.prpt.ai/'
+  },
+  {
+    id: 'work-15',
+    title: 'ACT! ESG 서비스 사업',
+    summary: 'ESG 서비스 론칭 및 체크박스, 탭, 라벨, 팝업, 배너 작업',
+    year: '2022.12 ~ 2023.08',
+    role: 'Publisher',
+    tags: ['Nuxt.js', 'Sass', 'Toast-ui', 'Swiper.js'],
+    href: 'https://www.actesg.kr/'
+  },
+  {
+    id: 'work-16',
+    title: '메트라이프 통합교육플랫폼 TIP 시스템 구축사업',
+    summary: 'Vue.js 프레임워크 도입 작업',
+    year: '2022.03 ~ 2023.03',
+    role: 'Publisher',
+    tags: ['Vue.js', 'Chart.js', 'Video.js', 'Fontagon', 'Swiper.js'],
+    href: 'https://tip.metlife.co.kr/gate'
+  },
+  {
+    id: 'work-17',
+    title: '하나은행 디지털캠퍼스 고도화사업',
+    summary: 'ES5 → ES6 마이그레이션 및 크로스 브라우징 작업(IE)',
+    year: '2022.01 ~ 2023.04',
+    role: 'Publisher',
+    tags: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'JSP'],
+    href: 'https://campus.hanabank.com:18443/main.do'
+  },
+  {
+    id: 'work-18',
+    title: '국립외교원 외교배움e 시스템 구축사업',
+    summary: '웹유지보수 및 하자보수 작업, 고도화 작업(화면 디자인 변경으로 인한 웹 리뉴얼), 웹접근성, 웹표전 작업',
+    year: '2021.09 ~ 2022.06',
+    role: 'Publisher',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Gulp.js'],
+    href: 'https://edu.mofa.go.kr/gate.do'
+  },
+  {
+    id: 'work-19',
+    title: '하나금융티아이 DT UNIV 시스템 구축사업',
+    summary: '프로젝트 유지보수 작업(학습자, 관리자)',
+    year: '2021.08 ~ 2022.03',
+    role: 'Publisher',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Gulp.js'],
+    href: 'https://dtu.hanafn.com/gate.do'
   },
 ];
 
