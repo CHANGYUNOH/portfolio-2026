@@ -18,14 +18,16 @@ export const profile = {
   location: 'Seoul, KR',
   available: true, // 헤더의 "구직 중" 뱃지 노출 여부
   email: 'nohx051@naver.com',
+  phone: '010-6651-1375',
   resumeUrl: '#', // TODO: 이력서 PDF 경로 (예: '/resume.pdf')
 } as const;
 
 export const socials = [
-  { label: 'GitHub', href: 'https://github.com/' }, // TODO
-  { label: 'Velog', href: '#' }, // TODO
-  { label: 'LinkedIn', href: '#' }, // TODO
-  { label: 'Email', href: `mailto:${profile.email}` },
+  { label: 'GitHub', href: 'https://github.com/CHANGYUNOH' }, // TODO
+  { label: 'Tstory', href: 'https://ncg1375.tistory.com' }, // TODO
+  { label: 'Notion', href: 'https://forested-cent-ed3.notion.site/0b840fc162744ef580df0ccce3ff12f9?pvs=4' }, // TODO
+  { label: 'Phone', href: `tel:${profile.phone}` },
+  { label: 'Kakao', href: 'https://open.kakao.com/o/sYnLHKVg' }
 ] as const;
 
 export const nav = [
@@ -320,24 +322,38 @@ export type CareerItem = {
 
 export const career: CareerItem[] = [
   {
-    period: '2023 — Present',
-    company: '회사명 A', // TODO
+    period: '2024.12 — Present',
+    company: '엑스골프', // TODO
     position: 'Web Publisher',
     description: '웹 퍼블리싱 및 프론트엔드 개발 전반을 담당하고 있습니다.',
     achievements: [
-      '공통 컴포넌트 라이브러리 구축으로 신규 페이지 작업 시간 40% 단축', // TODO
-      '전사 서비스 웹 접근성 인증 마크 획득',
-      '레거시 jQuery 마크업을 React 컴포넌트로 점진적 마이그레이션',
+      '팀 프로젝트 관리를 위해서 업무협업 툴 도입(trello)',
+      '기존에 사용하던 Vue버전 2 -> 3로 업그레이드, Nuxt 도입',
+      '웹 접근성 준수 및 성능 최적화 작업',
+      'Vue.js 기반의 SPA 개발 및 유지보수',
+      'Nuxt.js 기반의 SSR 개발 및 유지보수',
+      'Chart.js, Video.js, Swiper.js 등 다양한 라이브러리 활용',
     ],
   },
   {
-    period: '2021 — 2023',
-    company: '회사명 B', // TODO
+    period: '2021.08 — 2024.08',
+    company: '㈜ 윌비소프트', // TODO
     position: 'Junior Publisher',
-    description: '에이전시에서 다양한 산업군의 웹사이트 퍼블리싱을 경험했습니다.',
+    description: '3년 차 웹 퍼블리셔로 교육 솔루션 개발 회사에서 웹서비스를 개발하였습니다. 솔루션사업본부의 팀원으로 합류되어서 매출액 22%증가, 자산 19%증가할 때까지 필요한 역량을 이바지 했던 경험이 있습니다.',
     achievements: [
-      '연간 15개 이상의 프로젝트 퍼블리싱 참여',
-      'IE11 포함 크로스브라우징 대응 가이드 문서 작성',
+      '총 12개 이상의 프로젝트 퍼블리싱 참여',
+      'Gulp.js를 활용한 빌드 자동화 및 배포 환경 구축',
+      '웹 접근성 준수 및 성능 최적화 작업',
+      'Vue.js 기반의 SPA 개발 및 유지보수',
+      'Nuxt.js 기반의 SSR 개발 및 유지보수',
+      'Chart.js, Video.js, Swiper.js 등 다양한 라이브러리 활용',
+      '웹 표준 및 크로스 브라우징 테스트 수행',
+      '협업을 위한 Git/GitHub 활용 및 코드 리뷰 참여',
+      '프로젝트 일정 관리 및 업무 분담을 위한 Trello 등 협업 툴 활용',
+      '클라이언트 요구사항 분석 및 UI/UX 개선 제안',
+      '팀 내 기술 공유 및 코드 품질 향상을 위한 스터디 진행',
+      '신입 퍼블리셔 교육 및 멘토링 진행',
+      '프로젝트 완료 후 회고 및 개선 사항 도출을 통한 지속적인 프로세스 개선',
     ],
   },
 ];
